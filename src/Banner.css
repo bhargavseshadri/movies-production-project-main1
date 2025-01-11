@@ -1,0 +1,189 @@
+.banner-swiper {
+    width: 100%;
+    height: 100vh; /* Full height for a cinematic look */
+  }
+  
+  .banner-slide {
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: flex-start; /* Align content to the left */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .banner-slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)); /* Dark gradient */
+    z-index: 1;
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 2; /* Above gradient */
+    color: white;
+    padding: 30px 80px;
+    max-width: 500px; /* Adjust as per design */
+  }
+  
+  .banner-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff0000; /* Red color for the title */
+    margin-bottom: 15px;
+  }
+  
+  .banner-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .banner-buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+  }
+  
+  .banner-buttons button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* Rounded corners for buttons */
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .banner-buttons button:first-child {
+    background-color: #ff0000; /* Red for "Watch Trailer" button */
+    color: white;
+  }
+  
+  .banner-buttons button:first-child:hover {
+    background-color: #cc0000; /* Darker red on hover */
+  }
+  
+  .banner-buttons button:last-child {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .banner-buttons button:last-child:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .banner-content h1 {
+      font-size: 2.5rem;
+    }
+    .banner-content p {
+      font-size: 1rem;
+    }
+    .banner-buttons button {
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .banner-content {
+      padding: 20px;
+      max-width: 400px;
+    }
+    .banner-content h1 {
+      font-size: 2rem;
+    }
+    .banner-content p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner-content {
+      max-width: 300px;
+      padding: 10px;
+    }
+    .banner-content h1 {
+      font-size: 1.5rem;
+    }
+    .banner-content p {
+      font-size: 0.8rem;
+    }
+    .banner-buttons button {
+      padding: 8px 15px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .custom-prev,
+.custom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* Adjust based on your image size */
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.custom-prev {
+  left: 10px;
+}
+
+.custom-next {
+  right: 10px;
+}
+
+.custom-prev img,
+.custom-next img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure proper scaling */
+}
+
+
+/* pending */
+
+/* Swiper container */
+
+.swiper-pagination-custom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  z-index: 10;
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-segment {
+  height: 6px;
+  background-color: #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+/* .progress-indicator {
+  position: absolute;
+  bottom: -2px;
+  width: 10px;
+  height: 10px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+} */

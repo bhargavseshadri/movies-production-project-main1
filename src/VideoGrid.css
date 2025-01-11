@@ -1,0 +1,60 @@
+/* VideoGrid.css */
+.video-section {
+    padding: 20px;
+    /* background-color: #222; */
+    color: #fff;
+  }
+  
+  .video-section-title {
+    font-size: 1.5em;
+    color: #f44336;
+    margin-bottom: 10px;
+    /* border-bottom: 2px solid #1e90ff; */
+    padding-bottom: 5px;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .video-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .video-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .video-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+  
+  .play-icon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .play-icon {
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .video-item:hover .play-icon {
+    opacity: 1;
+  }
+  
