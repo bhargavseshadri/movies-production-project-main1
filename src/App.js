@@ -1,4 +1,6 @@
 // import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Banner from './Banner';
 import FilmDisplay from './FilmDisplay';
@@ -7,6 +9,7 @@ import Navbar from './Navbar';
 import Slider from './Slider';
 import Subscribe from './Subscribe';
 import VideoGrid from './VideoGrid';
+import AboutUs from './Pages/AboutUsPage';
 
 function App() {
 
@@ -49,23 +52,31 @@ function App() {
 
 
   return(
-    <>
-     <Navbar />
-     <Banner/>
-     <Slider
-     title="Recent Trailers"
-     movieData={movieData1}
-     customStyles={customStyles1}/>
-     <Slider
-     title="Upcoming Movies"
-     movieData={movieData2}
-     customStyles={customStyles2}/>
-     <FilmDisplay/>
+    <Router>
+      <Navbar/>
+          <Routes>
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/" element={
+              <>
+                
+                <Banner/>
+                <Slider
+                title="Recent Trailers"
+                movieData={movieData1}
+                customStyles={customStyles1}/>
+                <Slider
+                title="Upcoming Movies"
+                movieData={movieData2}
+                customStyles={customStyles2}/>
+                <FilmDisplay/>
 
-     <VideoGrid/>
-    <Footer />
-    <Subscribe/>
-  </>
+                <VideoGrid/>
+                <Footer />
+                <Subscribe/>
+              </>
+            } />
+        </Routes>
+  </Router>
   
   );
  

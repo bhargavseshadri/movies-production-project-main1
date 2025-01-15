@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom"; // Import Link
 import "./Navbar.css";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
+  useEffect(() => {
+    setIsMenuOpen(false); // Close the sidebar on route change
+  }, [location]);
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -46,7 +52,9 @@ function Navbar() {
           /> */}
         </div>
         <ul className="sidebar-links">
-          <li>About Us</li>
+          <li>
+            <Link to="/about-us">About Us</Link>
+          </li>
           <li>Trailers</li>
           <li>News & Press</li>
           <li>Contact Us</li>
